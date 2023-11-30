@@ -1,10 +1,12 @@
 import express from "express";
+import {
+  loginController,
+  registerController,
+} from "../controllers/userController";
 
 const router = express.Router();
 
-router.get("/get-questions", getQuestions);
-router.post("/submit-answer", submitAnswer);
-router.post("/post-question", postQuestion);
-router.get("/start-quiz", startQuiz);
+router.post("/register", registerController);
+router.post("/login", loginController);
 
 export default router;
