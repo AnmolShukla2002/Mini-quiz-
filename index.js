@@ -2,6 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import userRouter from "./routes/userRoute.js";
+import questionRouter from "./routes/questionRoute.js";
 
 dotenv.config();
 const app = express();
@@ -22,6 +24,9 @@ const connectDB = async () => {
     console.log("Error while connecting to database");
   }
 };
+
+app.use("/api/user", userRouter);
+app.use("/api/question", questionRouter);
 
 app.listen(PORT, () => {
   connectDB();

@@ -14,6 +14,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  token: String,
 });
 
 export default mongoose.model("User", UserSchema);
